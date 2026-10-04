@@ -1,0 +1,15 @@
+[
+  {
+    "schema_version": 1,
+    "event_id": "event-demo-001",
+    "run_id": "run-demo-001",
+    "sequence": 1,
+    "tool_name": "site.discover",
+    "idempotency_key": "idem-demo-001",
+    "status": "SUCCEEDED",
+    "input_digest": "digest-in",
+    "output_digest": "digest-out",
+    "attempt": 1,
+    "error_code": null
+  }
+]

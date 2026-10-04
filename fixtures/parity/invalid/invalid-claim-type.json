@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "claim_id": "claim-demo-001",
+  "claim_type": "UNSUPPORTED",
+  "subject": "cohort",
+  "predicate": "feasible",
+  "value": true,
+  "evidence_refs": [
+    {
+      "schema_version": 1,
+      "evidence_id": "evidence-demo-001",
+      "source": "synthetic-site-a",
+      "source_version": "fixture-1",
+      "source_hash": "sha256-demo",
+      "locator": "patient/demo-001",
+      "record_id": "demo-001",
+      "parent_evidence_id": null,
+      "drill_down_refs": [],
+      "transformations": []
+    }
+  ],
+  "confidence": null,
+  "explanation": null
+}

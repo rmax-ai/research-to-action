@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "request_id": "request-demo-001",
+  "revision": 1,
+  "parent_request_id": null,
+  "original_intent": "Find synthetic metastatic NSCLC cases.",
+  "clinical_criteria": [],
+  "asset_requirements": [],
+  "purpose_of_use": {
+    "code": "commercial_ai_model_development"
+  },
+  "requested_quantity": 200,
+  "minimum_follow_up_months": 12,
+  "optimization_preference": null,
+  "ontology_mappings": [],
+  "unresolved_ambiguities": []
+}

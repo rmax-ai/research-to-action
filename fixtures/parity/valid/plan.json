@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "plan_id": "plan-demo-001",
+  "request_id": "request-demo-001",
+  "request_revision": 1,
+  "steps": [
+    "discover",
+    "quality",
+    "govern"
+  ],
+  "tool_names": [
+    "site.discover"
+  ],
+  "assumptions": [],
+  "workflow_version": "e1.workflow.v1",
+  "config_version": "e1.config.v1",
+  "ontology_version": "e1.ontology.v1",
+  "policy_version": "e1.policy.v1",
+  "plan_hash": null
+}
