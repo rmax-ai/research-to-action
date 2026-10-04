@@ -4,10 +4,10 @@
 become a **correct, authorized, reproducible, and actionable transaction** across
 heterogeneous/federated clinical data.
 
-> **Status: bootstrap.** This repository currently contains only the initial skeleton
-> (README, MIT license, Python + TypeScript scaffolding). The canonical product/system
-> spec, synthetic-data plan, eval plan, and epic/task hierarchy land before any
-> implementation.
+> **Status: E1 foundation.** This repository contains the versioned contracts,
+> provenance/audit primitives, typed resumable workflow shell, deterministic mock
+> provider, and offline parity/CI checks. Later epics add synthetic site adapters,
+> feasibility, governance, and procurement behavior.
 
 ## POC invariant
 
@@ -24,9 +24,19 @@ feasibility, governance, provenance, supplier mix, and mock procurement.
 
 | Path | Purpose |
 | --- | --- |
-| `src/governed_clinical_actions/` | Python package (uv-managed, src layout) |
+| `src/governed_clinical_actions/models/` | Strict Pydantic v2 boundary contracts |
+| `src/governed_clinical_actions/provenance/` | Request, plan, run, claim, and evidence identity |
+| `src/governed_clinical_actions/audit/` | Append-only event log |
+| `src/governed_clinical_actions/workflow/` | Typed tool gate and pause/resume state machine |
+| `src/governed_clinical_actions/llm/` | Provider protocol and deterministic mock |
 | `tests/` | Python test suite (pytest) |
-| `ts/` | TypeScript workspace (placeholder) |
+| `fixtures/parity/` | Shared Python/TypeScript JSON boundary fixtures |
+| `ts/` | TypeScript Zod parity schemas and tests |
+
+Boundary objects carry `schema_version: 1` and use `extra="forbid"`. Unknown
+versions and unknown fields fail closed. Adding a compatible schema version
+requires an explicit model/dispatch entry; validation remains separate from
+authorization and workflow policy.
 
 ## Development
 
@@ -43,6 +53,14 @@ TypeScript (Node 20+):
 ```bash
 npm install
 npm run typecheck
+npm run test:ts
+```
+
+Run the complete offline-friendly local CI checks (tests use only synthetic
+fixtures and do not call external providers):
+
+```bash
+./scripts/ci-local.sh
 ```
 
 ## License
